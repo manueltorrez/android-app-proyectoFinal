@@ -9,24 +9,45 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+
+        </activity>
+        <activity
+            android:name=".AgregarPrestamos"
+            android:parentActivityName=".MainActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.gangofseven.labs.app.MainActivity" />
+        </activity>
+        <activity
+            android:name=".PrestamosPendientes"
+            android:parentActivityName=".MainActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.gangofseven.labs.app.MainActivity" />
+        </activity>
+        <activity
+            android:name=".HistorialPrestamos"
+            android:parentActivityName=".MainActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.gangofseven.labs.app.MainActivity" />
+        </activity>
+        <activity android:name=".InformacionPrestamos" />
+        <activity android:name=".IngresarCuota" />
+        <activity android:name=".VisualizarCuotas" />
+        <activity android:name=".EasySplashScreenActivity" android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Agregar_Prestamos">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".Prestamos_Pendientes" />
-        <activity android:name=".Informacion_Prestamos" />
-        <activity android:name=".Ingresar_Cuota" />
-        <activity android:name=".Historial_Prestamos" />
-        <activity android:name=".Visualizar_Cuotas"></activity>
     </application>
 
 </manifest>

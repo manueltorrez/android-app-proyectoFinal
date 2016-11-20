@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">Prestamos Seguro</string>
+    <string name="app_name">Préstamo Seguro</string>
     <string name="title_activity_informacion_prestamos">InformacionPrestamos</string>
+    <string name="main_button_add">Guardar</string>
 </resources>

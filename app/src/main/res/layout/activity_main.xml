@@ -15,10 +15,10 @@
         android:text="Ver Historial de Prestamos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button4"
+        android:id="@+id/bHistorial"
         android:layout_marginTop="23dp"
-        android:layout_below="@+id/button3"
-        android:layout_alignStart="@+id/button3" />
+        android:layout_below="@+id/bPendientes"
+        android:layout_alignStart="@+id/bPendientes" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="63dp"
-        android:id="@+id/button2"
+        android:id="@+id/bAgregar"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true" />
 
@@ -43,8 +43,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="23dp"
-        android:id="@+id/button3"
-        android:layout_below="@+id/button2"
+        android:id="@+id/bPendientes"
+        android:layout_below="@+id/bAgregar"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
