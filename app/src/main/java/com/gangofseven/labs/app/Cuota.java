@@ -1,18 +1,26 @@
 package com.gangofseven.labs.app;
 
+import com.orm.SugarRecord;
+import com.orm.dsl.Table;
+
 import java.util.Date;
 
 /**
  * Created by isi4 on 21/11/2016.
  */
-
-public class Cuota {
+@Table
+public class Cuota extends SugarRecord{
+    private Long id;
     private float monto;
     private Date fecha;
 
     public Cuota(float monto, Date fecha) {
         this.monto = monto;
         this.fecha = fecha;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public float getMonto() {

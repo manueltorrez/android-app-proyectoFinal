@@ -1,12 +1,17 @@
 package com.gangofseven.labs.app;
 
+import com.orm.SugarRecord;
+import com.orm.dsl.Table;
+
 import java.util.Date;
 
 /**
  * Created by jlou trill on 11/19/2016.
  */
 
-public class Prestamo {
+@Table
+public class Prestamo extends SugarRecord{
+    private Long id;
     private String titulo;
     private String nombrePrestamista;
     private float monto;
@@ -21,6 +26,11 @@ public class Prestamo {
         this.interes = interes;
         this.fechaPrestamo = fechaPrestamo;
         this.fechaPago = fechaPago;
+    }
+
+    @Override
+    public Long getId() {
+        return id;
     }
 
     public String getTitulo() {
