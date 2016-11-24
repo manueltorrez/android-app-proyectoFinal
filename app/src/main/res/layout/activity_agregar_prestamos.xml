@@ -126,7 +126,7 @@
         android:layout_alignEnd="@+id/textView5" />
 
     <Button
-        android:text="Seleccionar"
+        android:text="@string/main_button_select"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editText4"
@@ -137,7 +137,7 @@
         android:layout_alignParentEnd="true" />
 
     <Button
-        android:text="Seleccionar"
+        android:text="@string/main_button_select"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/textView8"

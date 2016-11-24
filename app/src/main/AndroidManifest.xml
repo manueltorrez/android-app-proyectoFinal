@@ -19,6 +19,7 @@
         </activity>
         <activity
             android:name=".AgregarPrestamos"
+            android:label="Agregar Préstamos"
             android:parentActivityName=".MainActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -27,7 +28,9 @@
                 android:value="com.gangofseven.labs.app.MainActivity" />
         </activity>
         <activity
+
             android:name=".PrestamosPendientes"
+            android:label="Préstamos Pendientes"
             android:parentActivityName=".MainActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -37,6 +40,7 @@
         </activity>
         <activity
             android:name=".HistorialPrestamos"
+            android:label="Historial Prestamos"
             android:parentActivityName=".MainActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -44,9 +48,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.gangofseven.labs.app.MainActivity" />
         </activity>
-        <activity android:name=".InformacionPrestamos" />
-        <activity android:name=".IngresarCuota" />
-        <activity android:name=".VisualizarCuotas" />
+        <activity android:name=".InformacionPrestamos"
+                  android:label="Informacion Prestamos"/>
+        <activity android:name=".IngresarCuota"
+                  android:label="Ingresar Cuota"/>
+        <activity android:name=".VisualizarCuotas"
+                  android:label="Visualizar Cuotas"/>
         <activity android:name=".EasySplashScreenActivity" android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

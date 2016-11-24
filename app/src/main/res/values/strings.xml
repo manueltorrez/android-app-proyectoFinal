@@ -2,4 +2,5 @@
     <string name="app_name">Préstamo Seguro</string>
     <string name="title_activity_informacion_prestamos">InformacionPrestamos</string>
     <string name="main_button_add">Guardar</string>
+    <string name="main_button_select">Seleccionar</string>
 </resources>
