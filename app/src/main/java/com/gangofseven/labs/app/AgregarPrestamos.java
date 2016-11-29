@@ -122,7 +122,7 @@ public class AgregarPrestamos extends AppCompatActivity {
         });
 
 
-        //Guardar préstamo
+        //Método para guardar un préstamo
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
