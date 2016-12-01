@@ -1,6 +1,7 @@
 package com.gangofseven.labs.app;
 
 import android.content.Context;
+import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,8 @@ import java.util.List;
 public class PrestamoAdapter extends ArrayAdapter<Prestamo> {
 
     List<Prestamo> prestamos;
+    private SparseBooleanArray mSelectedItemsIds;
+
 
     public PrestamoAdapter(Context context, List<Prestamo> objects) {
         super(context, 0, objects);
@@ -34,8 +37,8 @@ public class PrestamoAdapter extends ArrayAdapter<Prestamo> {
         TextView nombre = (TextView) convertView.findViewById(R.id.tvNombre);
         TextView monto = (TextView) convertView.findViewById(R.id.tvMonto);
         TextView interes = (TextView) convertView.findViewById(R.id.tvInteres);
-        TextView fechaPrestamo= (TextView) convertView.findViewById(R.id.tvFechaPres);
-        TextView fechaPago= (TextView) convertView.findViewById(R.id.tvFechaPago);
+        TextView fechaPrestamo = (TextView) convertView.findViewById(R.id.tvFechaPres);
+        TextView fechaPago = (TextView) convertView.findViewById(R.id.tvFechaPago);
 
         Prestamo prestamo = prestamos.get(position);
 
@@ -44,8 +47,8 @@ public class PrestamoAdapter extends ArrayAdapter<Prestamo> {
         monto.setText(String.valueOf(prestamo.getMonto()));
         interes.setText(String.valueOf(prestamo.getInteres()));
 
-        String fechaPre= new SimpleDateFormat("dd-MM-yyyy").format(prestamo.getFechaPrestamo());
-        String fechaPag= new SimpleDateFormat("dd-MM-yyyy").format(prestamo.getFechaPago());
+        String fechaPre = new SimpleDateFormat("dd-MM-yyyy").format(prestamo.getFechaPrestamo());
+        String fechaPag = new SimpleDateFormat("dd-MM-yyyy").format(prestamo.getFechaPago());
 
         fechaPrestamo.setText(fechaPre);
         fechaPago.setText(fechaPag);
@@ -57,4 +60,30 @@ public class PrestamoAdapter extends ArrayAdapter<Prestamo> {
     public int getCount() {
         return super.getCount();
     }
+
+
+    public void toggleSelection(int position) {
+        selectView(position, !mSelectedItemsIds.get(position));
+    }
+
+    public void removeSelection() {
+        mSelectedItemsIds = new SparseBooleanArray();
+        notifyDataSetChanged();
+    }
+
+    public void selectView(int position, boolean value) {
+        if (value)
+            mSelectedItemsIds.put(position, value);
+        else
+            mSelectedItemsIds.delete(position);
+
+        notifyDataSetChanged();
+    }
+
+    public SparseBooleanArray getmSelectedItemsIds() {
+        return mSelectedItemsIds;
+    }
+
+
 }
+
