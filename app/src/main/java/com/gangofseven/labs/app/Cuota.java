@@ -14,6 +14,9 @@ public class Cuota extends SugarRecord{
     private float monto;
     private Date fecha;
 
+    public Cuota() {
+    }
+
     public Cuota(float monto, Date fecha) {
         this.monto = monto;
         this.fecha = fecha;

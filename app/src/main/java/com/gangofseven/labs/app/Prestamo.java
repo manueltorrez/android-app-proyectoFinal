@@ -19,6 +19,9 @@ public class Prestamo extends SugarRecord{
     private Date fechaPrestamo;
     private Date fechaPago;
 
+    public Prestamo() {
+    }
+
     public Prestamo(String titulo, String nombrePrestamista, float monto, float interes, Date fechaPrestamo, Date fechaPago) {
         this.titulo = titulo;
         this.nombrePrestamista = nombrePrestamista;

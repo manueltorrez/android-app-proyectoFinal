@@ -3,4 +3,5 @@
     <string name="title_activity_informacion_prestamos">InformacionPrestamos</string>
     <string name="main_button_add">Guardar</string>
     <string name="main_button_select">Seleccionar</string>
+    <string name="search_hint">Buscar</string>
 </resources>

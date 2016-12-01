@@ -42,7 +42,7 @@ public class PrestamoAdapter extends ArrayAdapter<Prestamo> {
         titulo.setText(prestamo.getTitulo());
         nombre.setText(prestamo.getNombrePrestamista());
         monto.setText(String.valueOf(prestamo.getMonto()));
-        interes.setText((int) prestamo.getInteres());
+        interes.setText(String.valueOf(prestamo.getInteres()));
 
         String fechaPre= new SimpleDateFormat("dd-MM-yyyy").format(prestamo.getFechaPrestamo());
         String fechaPag= new SimpleDateFormat("dd-MM-yyyy").format(prestamo.getFechaPago());
@@ -50,8 +50,11 @@ public class PrestamoAdapter extends ArrayAdapter<Prestamo> {
         fechaPrestamo.setText(fechaPre);
         fechaPago.setText(fechaPag);
 
-
         return convertView;
     }
 
+    @Override
+    public int getCount() {
+        return super.getCount();
+    }
 }

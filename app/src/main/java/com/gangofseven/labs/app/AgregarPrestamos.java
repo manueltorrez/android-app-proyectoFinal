@@ -60,6 +60,7 @@ public class AgregarPrestamos extends AppCompatActivity {
     public void addPrestamo(){
         Prestamo p = new Prestamo(titulo.getText().toString(), nombrePres.getText().toString(), Float.parseFloat(monto.getText().toString()), Float.parseFloat(interes.getText().toString()),calendario.getTime(), calendario2.getTime());
         p.save();
+        Toast.makeText(AgregarPrestamos.this, "Registro guardado",Toast.LENGTH_SHORT).show();
     }
 
     public void ponerDatePicker(){
