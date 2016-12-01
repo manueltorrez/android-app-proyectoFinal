@@ -25,6 +25,8 @@ public class AgregarPrestamos extends AppCompatActivity {
     private Calendar calendario;
     private Calendar calendario2;
     private Button guardar;
+    private Button presta;
+    private Button paga;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +38,31 @@ public class AgregarPrestamos extends AppCompatActivity {
         monto = (EditText) findViewById(R.id.eMonto);
         interes = (EditText) findViewById(R.id.eInteres);
 
-        Button presta = (Button) findViewById(R.id.bFechaPre);
-        Button paga = (Button) findViewById(R.id.bFechaPa);
+        presta = (Button) findViewById(R.id.bFechaPre);
+        paga = (Button) findViewById(R.id.bFechaPa);
         guardar = (Button) findViewById(R.id.button5);
 
+        //Método para seleccionar fecha en un DatePicker
+        ponerDatePicker();
+
+        //Método para guardar un préstamo
+        guardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addPrestamo();
+            }
+        });
+
+
+
+    }
+
+    public void addPrestamo(){
+        Prestamo p = new Prestamo(titulo.getText().toString(), nombrePres.getText().toString(), Float.parseFloat(monto.getText().toString()), Float.parseFloat(interes.getText().toString()),calendario.getTime(), calendario2.getTime());
+        p.save();
+    }
+
+    public void ponerDatePicker(){
         setOnDateSetListener(new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -120,23 +143,6 @@ public class AgregarPrestamos extends AppCompatActivity {
                 pickerDialog2.show();
             }
         });
-
-
-        //Método para guardar un préstamo
-        guardar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addPrestamo();
-            }
-        });
-
-
-
-    }
-
-    public void addPrestamo(){
-        Prestamo p = new Prestamo(titulo.getText().toString(), nombrePres.getText().toString(), Float.parseFloat(monto.getText().toString()), Float.parseFloat(interes.getText().toString()),calendario.getTime(), calendario2.getTime());
-        p.save();
     }
 
     public DatePickerDialog.OnDateSetListener getOnDateSetListener() {

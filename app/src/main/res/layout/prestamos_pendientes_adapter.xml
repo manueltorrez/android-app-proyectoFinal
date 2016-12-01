@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:id="@+id/tvTitulo" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:id="@+id/tvNombre" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:id="@+id/tvMonto"
+        android:layout_weight="0.04" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:id="@+id/tvInteres" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:id="@+id/tvFechaPres"
+        android:layout_weight="0.07" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:id="@+id/tvFechaPago"
+        android:layout_weight="0.08" />
+</LinearLayout>

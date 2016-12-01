@@ -19,6 +19,7 @@ public class Cuota extends SugarRecord{
         this.fecha = fecha;
     }
 
+    @Override
     public Long getId() {
         return id;
     }
