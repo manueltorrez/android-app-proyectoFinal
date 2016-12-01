@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
@@ -7,39 +7,65 @@
     <TextView
         android:text="TextView"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:id="@+id/tvTitulo" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:id="@+id/tvNombre" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="match_parent"
         android:layout_height="45dp"
         android:id="@+id/tvMonto"
-        android:layout_weight="0.04" />
+        android:layout_weight="0.04"
+        android:textColor="@color/colorPrimaryText"
+        android:layout_above="@+id/tvTitulo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="190dp" />
 
     <TextView
         android:text="TextView"
         android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:id="@+id/tvInteres" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="match_parent"
-        android:layout_height="41dp"
+        android:layout_height="28dp"
         android:id="@+id/tvFechaPres"
-        android:layout_weight="0.07" />
+        android:layout_weight="0.03"
+        android:textColor="@color/colorPrimaryText"
+        android:layout_below="@+id/tvFechaPago"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:text="TextView"
         android:layout_width="match_parent"
-        android:layout_height="46dp"
+        android:layout_height="30dp"
+        android:id="@+id/tvNombre"
+        android:textColor="@color/colorPrimaryText"
+        android:layout_below="@+id/tvTitulo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="TextView"
+        android:id="@+id/tvInteres"
+        android:textColor="@color/colorPrimaryText"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/tvNombre"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
         android:id="@+id/tvFechaPago"
-        android:layout_weight="0.08" />
-</LinearLayout>
+        android:textColor="@color/colorPrimaryText"
+        android:layout_below="@+id/tvInteres"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:id="@+id/tvTitulo"
+        android:textColor="@color/colorPrimaryText"
+        android:layout_marginTop="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
