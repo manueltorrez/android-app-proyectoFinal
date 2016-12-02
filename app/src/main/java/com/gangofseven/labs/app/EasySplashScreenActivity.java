@@ -20,7 +20,7 @@ public class EasySplashScreenActivity extends AppCompatActivity {
                 /*.withHeaderText("Préstamo Seguro")*/
                 .withFooterText("Gang of Seven Labs Copyright 2016")
                 .withBeforeLogoText("Préstamo Seguro App")
-                .withLogo(R.drawable.web_hi_res_512)
+                .withLogo(R.drawable.money2)
                 /*.withAfterLogoText("Ver más detalles")*/
                 .create();
 

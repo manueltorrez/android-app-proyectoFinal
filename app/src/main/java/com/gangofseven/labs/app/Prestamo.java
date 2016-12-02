@@ -4,6 +4,7 @@ import com.orm.SugarRecord;
 import com.orm.dsl.Table;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by jlou trill on 11/19/2016.
@@ -34,6 +35,10 @@ public class Prestamo extends SugarRecord{
     @Override
     public Long getId() {
         return id;
+    }
+
+    List<Cuota> getCuotas() {
+        return Cuota.find(Cuota.class, "prestamo = ?", new String{getId()})
     }
 
     public String getTitulo() {

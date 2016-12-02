@@ -65,6 +65,7 @@ public class PrestamosPendientes extends AppCompatActivity {
                 MenuInflater inflater = getMenuInflater();
                 inflater.inflate(R.menu.menu_prestamos, menu);
                 menu.findItem(R.id.action_delete).setTitle("Eliminar");
+                menu.findItem(R.id.action_add_quota).setTitle("Agregar cuota");
                 mMenuItemEdit =  menu.findItem(R.id.action_delete);
                 mMenuItemEdit.setVisible(false);
                 return true;
@@ -96,6 +97,10 @@ public class PrestamosPendientes extends AppCompatActivity {
 //                            toggleList(OFF);
                             mode.finish();
                         return true;
+
+                    case R.id.action_add_quota:
+                        addQuota();
+                        return true;
                     default:
                         return false;
                 }
@@ -110,6 +115,11 @@ public class PrestamosPendientes extends AppCompatActivity {
 
 
 
+    }
+
+    public void addQuota(){
+        Intent a = new Intent(PrestamosPendientes.this, IngresarCuota.class);
+        startActivity(a);
     }
 
     @Override
