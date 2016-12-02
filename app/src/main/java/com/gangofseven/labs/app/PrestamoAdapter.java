@@ -24,6 +24,7 @@ public class PrestamoAdapter extends ArrayAdapter<Prestamo> {
     public PrestamoAdapter(Context context, List<Prestamo> objects) {
         super(context, 0, objects);
         this.prestamos = objects;
+        mSelectedItemsIds = new SparseBooleanArray();
     }
 
     @Override
@@ -42,16 +43,16 @@ public class PrestamoAdapter extends ArrayAdapter<Prestamo> {
 
         Prestamo prestamo = prestamos.get(position);
 
-        titulo.setText(prestamo.getTitulo());
-        nombre.setText(prestamo.getNombrePrestamista());
-        monto.setText(String.valueOf(prestamo.getMonto()));
-        interes.setText(String.valueOf(prestamo.getInteres()));
+        titulo.setText("Título: "+prestamo.getTitulo());
+        nombre.setText("Prestamista: "+prestamo.getNombrePrestamista());
+        monto.setText("Monto: "+String.valueOf(prestamo.getMonto()));
+        interes.setText("Interés: "+String.valueOf(prestamo.getInteres())+"%");
 
         String fechaPre = new SimpleDateFormat("dd-MM-yyyy").format(prestamo.getFechaPrestamo());
         String fechaPag = new SimpleDateFormat("dd-MM-yyyy").format(prestamo.getFechaPago());
 
-        fechaPrestamo.setText(fechaPre);
-        fechaPago.setText(fechaPag);
+        fechaPrestamo.setText("Fecha préstamo: "+fechaPre);
+        fechaPago.setText("Fecha pago: "+fechaPag);
 
         return convertView;
     }

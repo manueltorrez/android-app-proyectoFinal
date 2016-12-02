@@ -83,12 +83,12 @@ public class PrestamosPendientes extends AppCompatActivity {
                         for(int i = selected.size()-1;i>=0;i--){
                             if(selected.valueAt(i)){
                                 Prestamo selectedList = adapter.getItem(selected.keyAt(i));
-//                                for(Persona g : Persona.find(
-//                                        Grupo.class,"id = ?",String.valueOf(
-//                                                selectedList.getId()))){
-//                                    g.delete();
-//                                }
-//                                selectedList.delete();
+                                for(Prestamo g : Prestamo.find(
+                                        Prestamo.class,"id = ?",String.valueOf(
+                                                selectedList.getId()))){
+                                   g.delete();
+                                }
+                                selectedList.delete();
                                 adapter.remove(selectedList);
                             }
                         }
