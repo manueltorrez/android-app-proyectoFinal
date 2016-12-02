@@ -38,7 +38,7 @@ public class Prestamo extends SugarRecord{
     }
 
     List<Cuota> getCuotas() {
-        return Cuota.find(Cuota.class, "prestamo = ?", new String{getId()})
+        return Cuota.find(Cuota.class, "prestamo = ?", String.valueOf(getId()));
     }
 
     public String getTitulo() {

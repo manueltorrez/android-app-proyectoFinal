@@ -10,22 +10,13 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.gangofseven.labs.app.IngresarCuota">
 
-    <Button
-        android:text="@string/main_button_add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="34dp"
-        android:id="@+id/button"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
     <TextView
         android:text="Fecha:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView14"
         android:layout_marginTop="103dp"
-        android:layout_below="@+id/editText6"
+        android:layout_below="@+id/etMonto"
         android:layout_alignRight="@+id/textView13"
         android:layout_alignEnd="@+id/textView13" />
 
@@ -39,24 +30,35 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <Button
-        android:text="@string/main_button_select"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/bAgregarCuota"
-        android:layout_below="@+id/textView14"
-        android:layout_centerHorizontal="true" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editText6"
+        android:id="@+id/etMonto"
         android:hint="Name"
         android:layout_alignBaseline="@+id/textView13"
         android:layout_alignBottom="@+id/textView13"
         android:layout_alignLeft="@+id/bAgregarCuota"
         android:layout_alignStart="@+id/bAgregarCuota" />
+
+    <Button
+        android:text="@string/main_button_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bAgregarCuota"
+        android:layout_alignBaseline="@+id/textView14"
+        android:layout_alignBottom="@+id/textView14"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="@string/main_button_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:id="@+id/bGuardar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

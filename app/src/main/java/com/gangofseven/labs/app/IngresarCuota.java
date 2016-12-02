@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.Calendar;
@@ -14,13 +15,37 @@ import java.util.Calendar;
 public class IngresarCuota extends AppCompatActivity {
 
     private DatePickerDialog.OnDateSetListener onDateSetListener;
+    private Button cuota;
+    private Button guardar;
+    private Calendar calendario;
+    private EditText monto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ingresar_cuota);
-        Button cuota = (Button) findViewById(R.id.bAgregarCuota);
+        cuota = (Button) findViewById(R.id.bAgregarCuota);
+        guardar = (Button) findViewById(R.id.bGuardar);
+        monto = (EditText) findViewById(R.id.etMonto);
 
+        ponerDatePicker();
+
+        guardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addQuota();
+            }
+        });
+
+    }
+
+    public void addQuota(){
+        Cuota c = new Cuota(Float.parseFloat(monto.getText().toString()), calendario.getTime());
+        c.save();
+        Toast.makeText(IngresarCuota.this, "Registro guardado",Toast.LENGTH_SHORT).show();
+    }
+
+    public void ponerDatePicker(){
         setOnDateSetListener(new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -28,6 +53,8 @@ public class IngresarCuota extends AppCompatActivity {
                 Toast.makeText(IngresarCuota.this,"La fecha seleccionada es: "+view.getDayOfMonth()+
                         " de "+view.getMonth()+" de "+view.getYear(),Toast.LENGTH_LONG)
                         .show();
+                calendario = Calendar.getInstance();
+                calendario.set(year, month, dayOfMonth);
             }
         });
 
@@ -58,7 +85,6 @@ public class IngresarCuota extends AppCompatActivity {
                 pickerDialog.show();
             }
         });
-
     }
 
     public DatePickerDialog.OnDateSetListener getOnDateSetListener() {

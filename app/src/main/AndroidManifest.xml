@@ -56,8 +56,18 @@
         </activity>
         <activity android:name=".InformacionPrestamos"
                   android:label="Informacion Prestamos"/>
-        <activity android:name=".IngresarCuota"
-                  android:label="Ingresar Cuota"/>
+
+        <activity
+            android:name=".IngresarCuota"
+            android:label="Ingresar Cuota"
+            android:parentActivityName=".PrestamosPendientes">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.gangofseven.labs.app.PrestamosPendientes" />
+            </activity>
+
         <activity android:name=".VisualizarCuotas"
                   android:label="Visualizar Cuotas"/>
         <activity android:name=".EasySplashScreenActivity" android:theme="@style/AppTheme.NoActionBar">
