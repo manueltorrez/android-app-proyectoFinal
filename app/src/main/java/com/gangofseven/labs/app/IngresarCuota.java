@@ -19,6 +19,7 @@ public class IngresarCuota extends AppCompatActivity {
     private Button guardar;
     private Calendar calendario;
     private EditText monto;
+    private Contexto contexto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,9 @@ public class IngresarCuota extends AppCompatActivity {
         cuota = (Button) findViewById(R.id.bAgregarCuota);
         guardar = (Button) findViewById(R.id.bGuardar);
         monto = (EditText) findViewById(R.id.etMonto);
+
+        contexto = (Contexto) getApplicationContext();
+
 
         ponerDatePicker();
 
@@ -40,7 +44,7 @@ public class IngresarCuota extends AppCompatActivity {
     }
 
     public void addQuota(){
-        Cuota c = new Cuota(Float.parseFloat(monto.getText().toString()), calendario.getTime());
+        Cuota c = new Cuota(Float.parseFloat(monto.getText().toString()), calendario.getTime(), contexto.getId());
         c.save();
         Toast.makeText(IngresarCuota.this, "Registro guardado",Toast.LENGTH_SHORT).show();
     }

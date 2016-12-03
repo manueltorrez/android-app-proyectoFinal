@@ -3,7 +3,7 @@
     package="com.gangofseven.labs.app">
 
     <application
-        android:name="com.orm.SugarApp"
+        android:name=".Contexto"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
 
         <meta-data android:name="DATABASE" android:value="prestamoSeguro.db" />
-        <meta-data android:name="VERSION" android:value="3" />
+        <meta-data android:name="VERSION" android:value="4" />
         <meta-data android:name="QUERY_LOG" android:value="true" />
         <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="com.gangofseven.labs.app" />
 
@@ -69,7 +69,15 @@
             </activity>
 
         <activity android:name=".VisualizarCuotas"
-                  android:label="Visualizar Cuotas"/>
+                  android:label="Visualizar Cuotas"
+            android:parentActivityName=".PrestamosPendientes">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.gangofseven.labs.app.PrestamosPendientes" />
+
+        </activity>
         <activity android:name=".EasySplashScreenActivity" android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

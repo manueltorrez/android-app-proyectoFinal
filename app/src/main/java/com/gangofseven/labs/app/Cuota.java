@@ -15,14 +15,15 @@ public class Cuota extends SugarRecord{
     private Date fecha;
 
     //Definiendo la relación
-    private Prestamo prestamo;
+    private Long prestamoId;
 
     public Cuota() {
     }
 
-    public Cuota(float monto, Date fecha) {
+    public Cuota(float monto, Date fecha, Long prestamoId) {
         this.monto = monto;
         this.fecha = fecha;
+        this.prestamoId = prestamoId;
     }
 
     @Override
