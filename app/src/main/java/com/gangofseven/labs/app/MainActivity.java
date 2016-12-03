@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity{
 
-    Button agregar, pendiente, historial;
+    Button agregar, pendiente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity{
 
         agregar = (Button) findViewById(R.id.bAgregar);
         pendiente = (Button) findViewById(R.id.bPendientes);
-        historial = (Button) findViewById(R.id.bHistorial);
 
         agregar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -39,12 +38,6 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
-        historial.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent h = new Intent (MainActivity.this, HistorialPrestamos.class);
-                startActivity(h);
-            }
-        });
 
     }
 

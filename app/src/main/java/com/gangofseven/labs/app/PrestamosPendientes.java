@@ -43,8 +43,8 @@ public class PrestamosPendientes extends AppCompatActivity {
         listaPrestamistas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Prestamo p = adapter.getItem(i);
-                contexto.setId(p.getId());
+                //Prestamo p = adapter.getItem(i);
+                //contexto.setId(p.getId());
             }
         });
         listaPrestamistas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -69,6 +69,7 @@ public class PrestamosPendientes extends AppCompatActivity {
                 if (checked) {
                     nr++;
                     adapter.toggleSelection(position);
+                    contexto.setId(adapter.getItemId(position));
 
                 } else {
                     nr--;
@@ -114,6 +115,13 @@ public class PrestamosPendientes extends AppCompatActivity {
                                                 selectedList.getId()))){
                                    g.delete();
                                 }
+
+                                for(Cuota c : Cuota.find(
+                                        Cuota.class,"prestamo_id = ?",String.valueOf(
+                                                contexto.getId()))){
+                                    c.delete();
+                                }
+
                                 selectedList.delete();
                                 adapter.remove(selectedList);
                             }

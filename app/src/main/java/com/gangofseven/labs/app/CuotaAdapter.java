@@ -19,7 +19,7 @@ public class CuotaAdapter extends ArrayAdapter<Cuota> {
 
     List<Cuota> cuotas;
 
-    public CuotaAdapter(Context context, int resource, List<Cuota> objects) {
+    public CuotaAdapter(Context context, List<Cuota> objects) {
         super(context, 0, objects);
         this.cuotas = objects;
     }

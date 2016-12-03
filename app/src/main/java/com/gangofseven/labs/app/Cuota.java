@@ -46,4 +46,12 @@ public class Cuota extends SugarRecord{
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
+
+    public Long getPrestamoId() {
+        return prestamoId;
+    }
+
+    public void setPrestamoId(Long prestamoId) {
+        this.prestamoId = prestamoId;
+    }
 }

@@ -16,52 +16,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
         android:id="@+id/textView"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/eTitulo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
-        android:text="Nombre del Prestamista:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/eTitulo"
-        android:layout_alignParentLeft="false"
-        android:layout_alignParentStart="false"
-        android:layout_toStartOf="@+id/eTitulo"
-        android:layout_alignRight="@+id/textView6"
-        android:layout_alignEnd="@+id/textView6" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/eMonto"
-        android:layout_alignBaseline="@+id/textView4"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:hint="1000" />
-
-    <TextView
-        android:text="Monto Prestado C$:"
+        android:text="Monto:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="17dp"
         android:id="@+id/textView4"
         android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:text="% Intereses de Prestamo:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView5"
-        android:layout_alignTop="@+id/eInteres"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/textView4"
-        android:layout_alignEnd="@+id/textView4" />
+        android:layout_toLeftOf="@+id/eMonto"
+        android:layout_toStartOf="@+id/eMonto" />
 
     <Button
         android:text="@string/main_button_add"
@@ -72,24 +42,60 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-    <EditText
+    <Button
+        android:text="@string/main_button_select"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/eInteres"
-        android:layout_below="@+id/eMonto"
+        android:id="@+id/bFechaPa"
+        android:layout_marginTop="36dp"
+        android:layout_below="@+id/bFechaPre"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:hint="20" />
+        android:layout_toRightOf="@+id/textView6"
+        android:layout_toEndOf="@+id/textView6" />
 
     <TextView
         android:text="Fecha de Pago:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView8"
-        android:layout_marginBottom="112dp"
-        android:layout_above="@+id/button5"
+        android:layout_alignBaseline="@+id/bFechaPa"
+        android:layout_alignBottom="@+id/bFechaPa"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/bFechaPa"
+        android:layout_toStartOf="@+id/bFechaPa" />
+
+    <TextView
+        android:text="Fecha de Prestamo:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView6"
+        android:layout_alignBaseline="@+id/bFechaPre"
+        android:layout_alignBottom="@+id/bFechaPre"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/bFechaPre"
+        android:layout_toStartOf="@+id/bFechaPre" />
+
+    <Button
+        android:text="@string/main_button_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bFechaPre"
+        android:layout_below="@+id/eInteres"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/eInteres"
+        android:layout_alignStart="@+id/eInteres" />
+
+    <TextView
+        android:text="% Interés"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5"
+        android:layout_alignBaseline="@+id/eInteres"
+        android:layout_alignBottom="@+id/eInteres"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -98,12 +104,35 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/eTitulo"
-        android:layout_alignBaseline="@+id/textView"
-        android:layout_alignBottom="@+id/textView"
+        android:id="@+id/eInteres"
+        android:hint="20"
+        android:layout_below="@+id/eMonto"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:hint='"Préstamo de la tía Dora"' />
+        android:layout_marginTop="14dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/eTitulo"
+        android:hint='"Préstamo de la tía Dora"'
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Nombre del Prestamista:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/eTitulo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="14dp"
+        android:layout_toLeftOf="@+id/eNombre"
+        android:layout_toStartOf="@+id/eNombre" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -111,39 +140,20 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/eNombre"
-        android:layout_above="@+id/eMonto"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:hint="Andrés Valiente" />
-
-    <TextView
-        android:text="Fecha de Prestamo:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView6"
-        android:layout_below="@+id/eInteres"
-        android:layout_alignRight="@+id/textView5"
-        android:layout_alignEnd="@+id/textView5" />
-
-    <Button
-        android:text="@string/main_button_select"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/eInteres"
-        android:layout_alignLeft="@+id/eInteres"
-        android:layout_alignStart="@+id/eInteres"
-        android:id="@+id/bFechaPre"
+        android:hint="Andrés Valiente"
+        android:layout_alignTop="@+id/textView2"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-    <Button
-        android:text="@string/main_button_select"
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView8"
-        android:layout_alignLeft="@+id/bFechaPre"
-        android:layout_alignStart="@+id/bFechaPre"
-        android:id="@+id/bFechaPa"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/eMonto"
+        android:hint="1000"
+        android:layout_alignBaseline="@+id/textView4"
+        android:layout_alignBottom="@+id/textView4"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
