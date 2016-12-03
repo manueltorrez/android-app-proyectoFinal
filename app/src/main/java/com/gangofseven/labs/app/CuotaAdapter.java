@@ -2,6 +2,7 @@ package com.gangofseven.labs.app;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,10 +19,12 @@ import java.util.List;
 public class CuotaAdapter extends ArrayAdapter<Cuota> {
 
     List<Cuota> cuotas;
+    private SparseBooleanArray mSelectedItemsIds;
 
     public CuotaAdapter(Context context, List<Cuota> objects) {
         super(context, 0, objects);
         this.cuotas = objects;
+        mSelectedItemsIds = new SparseBooleanArray();
     }
 
     @NonNull
@@ -43,5 +46,27 @@ public class CuotaAdapter extends ArrayAdapter<Cuota> {
         fecha.setText("Fecha cuota: "+fechaS);
 
         return convertView;
+    }
+
+    public void toggleSelection(int position) {
+        selectView(position, !mSelectedItemsIds.get(position));
+    }
+
+    public void removeSelection() {
+        mSelectedItemsIds = new SparseBooleanArray();
+        notifyDataSetChanged();
+    }
+
+    public void selectView(int position, boolean value) {
+        if (value)
+            mSelectedItemsIds.put(position, value);
+        else
+            mSelectedItemsIds.delete(position);
+
+        notifyDataSetChanged();
+    }
+
+    public SparseBooleanArray getmSelectedItemsIds() {
+        return mSelectedItemsIds;
     }
 }
